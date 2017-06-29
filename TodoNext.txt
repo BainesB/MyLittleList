@@ -1,7 +1,2 @@
-run python manage.py test. 
+you are at: git commit -am "Basic view now returns minimal HTML"
 
-read the error message in the way he discribes and work out 
-what part of you code is broken. 
-
-git diff is not showing the new, test.py changes. ... need to find a 
-way to get theses added. 
