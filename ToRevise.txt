@@ -1,0 +1,11 @@
+git init : 	starts a new git repository
+
+rm -rf mydirrectory/mysubdirrectory : 	to delet dirrectory with stuff in it. 
+
+python manage.py startapp APPName: is the Django command, to start an app. 
+
+Reading Error Messages: 
+
+	This seems like it is a really important leason that he is giving here. 
+
+^$    :   means an empty string. 
