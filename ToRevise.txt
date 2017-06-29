@@ -9,3 +9,9 @@ Reading Error Messages:
 	This seems like it is a really important leason that he is giving here. 
 
 ^$    :   means an empty string. 
+
+send_keys : seleniums way of typing into input elements
+
+Keys : imported from selenium. It lets you subment special keys like 'enter'
+
+time.sleep : lets you create an 'explicit wait' this gives the browser tim to refresh. 

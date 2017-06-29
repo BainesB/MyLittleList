@@ -1,2 +1,2 @@
-you are at: git commit -am "Basic view now returns minimal HTML"
-
+you are at: 
+what are we doing with all these tests (and, refactoring)
