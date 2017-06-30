@@ -1,2 +1,2 @@
 you are at: 
-The "Don't Test Constants" Rule, and Templates to the Rescue
+Now what does the FT say?
