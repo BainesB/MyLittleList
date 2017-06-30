@@ -1,2 +1,2 @@
 you are at: 
-what are we doing with all these tests (and, refactoring)
+The "Don't Test Constants" Rule, and Templates to the Rescue
