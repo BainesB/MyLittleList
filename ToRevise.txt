@@ -15,3 +15,8 @@ send_keys : seleniums way of typing into input elements
 Keys : imported from selenium. It lets you subment special keys like 'enter'
 
 time.sleep : lets you create an 'explicit wait' this gives the browser tim to refresh. 
+
+
+{{ new_item_text }} : ?? Not sure yet. something to do with form submisions 
+
+{ csrf_token } creates a uniques security to token to stop cross site forgery attacks. ??: check this is correct. 
