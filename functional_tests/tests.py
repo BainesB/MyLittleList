@@ -1,9 +1,10 @@
+from django.test import LiveServerTestCase
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys
 import time 
 import unittest 
 
-class NewVisitorTest(unittest.TestCase): 
+class NewVisitorTest(LiveServerTestCase): 
     #(1) Test are organised into classes, which inherit from unittest.TestCase.
     #The main body of the test is in a method called.
     def setUp(self):#3
@@ -12,14 +13,15 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
     def check_for_row_in_list_table(self, row_text):
         table = self.browser.find_element_by_id('id_list_table')
-        rows  = table.find_element_by_tag_name('tr')
+        rows  = table.find_elements_by_tag_name('tr')
+        # 's' added to element
         self.assertIn(row_text, [row.text for row in rows])
 
 
     def test_can_start_a_list_and_retrieve_it_later(self):#2
 # Edith has heard about a cool new online to-do app. She goes 
 # to check out its homepage
-        self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
 #She notices the page title and header mention to-do lists
         self.assertIn('To-Do', self.browser.title)#4
@@ -74,12 +76,6 @@ class NewVisitorTest(unittest.TestCase):
 
 #She visits that URL - her to-do list is still there. 
 
-#Satisfied, she goes back to sleep. 
-if __name__ == '__main__':#6
-    unittest.main(warnings='ignore')#7
- # this is the code that gets run. 
- # if name is main. Run unittest.main()
- # this is python checking it is being run for comandline. 
 
 
 
