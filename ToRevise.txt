@@ -44,3 +44,22 @@ CSRF : cross site Request Forgery.A type of attack.
 'model' :  referse to a Database design. Namely what data fields you are saving
 
 'persistance' : you ablity to store information, or the systems state between sessions. 
+
+git -M : 'Detect differences' This is a flag that notices that a file that has been moved to an new dirrectory is the same file. This mean the the git diff results are easier to read and understand. 
+
+isolation : To make sure that tests don't interfear with each other. Make sure that each run of a test doesn't interfear with its next run.
+
+LiveServerTestCase : is a Django module that sets up test Databases. It will also set up a test server
+
+python manage.py test functional_tests : command to run the functional 'user side' tests. 
+
+python manage.py test lists : to run the unit 'developer side' tests
+
+assertRegex : Django helper that checks if a string matches a regular expresion 'regex'
+
+
+
+
+
+
+
