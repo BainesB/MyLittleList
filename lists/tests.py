@@ -14,7 +14,6 @@ class SmokeTest(TestCase):
 '''
 
 class HomePageTest(TestCase):
-    
     def test_uses_home_template(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
@@ -29,24 +28,15 @@ class HomePageTest(TestCase):
     def test_redirects_after_POST(self):
         response = self.client.post('/', data={'item_text':'A new listitem'})
         self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/')
+        self.assertEqual(response['location'], '/lists/the-only-list-in-the-world/')
 
     def test_only_saves_item_when_necessary(self):
             self.client.get('/')
             self.assertEqual(Item.objects.count(), 0)
 
-    def test_displays_all_list_items(self):
-        Item.objects.create(text='itemey 1')
-        Item.objects.create(text='itemey 2')
-        
-        response = self.client.get('/')
-        
-        self.assertIn('itemey 1', response.content.decode())
-        self.assertIn('itemey 2', response.content.decode())
-
 class ItemModelTest(TestCase):
     
-    def test_saving_andretrieving_items(self):
+    def test_saving_and_retrieving_items(self):
         first_item = Item()
         first_item.text = 'The fist (ever) list item'
         first_item.save()
@@ -64,4 +54,19 @@ class ItemModelTest(TestCase):
         second_saved_item = saved_item[1]
         self.assertEqual(first_saved_item.text, 'The fist (ever) list item')
         self.assertEqual(second_saved_item.text, 'Item the second')
+
+class ListViewTest(TestCase):
+
+    def test_uses_list_template(self):
+        response = self.client.get('/lists/the-only-list-in-the-world/')
+        self.assertTemplateUsed(response, 'list.html')
+    
+    def test_displays_all_items(self):
+        Item.objects.create(text='itemey 1')
+        Item.objects.create(text='itemey 2')
+        
+        response = self.client.get('/lists/the-only-list-in-the-world/')
+        
+        self.assertContains(response, 'itemey 1')
+        self.assertContains(response, 'itemey 2')
 

@@ -1,6 +1,6 @@
 you are at: 
 
-the start of chapture 7
+'maybe slightly tweak the h1 to say 'start an new To-Do list''
 
 Think you should make a clear&ls command
 
