@@ -1,14 +1,5 @@
-you are at: 
-'And everything now passes:' but it doesn't
-
-there is a test telling you that both your urls are the same and they aren't 
-
-need to note it out and work out what that code does. 
 
 Think you should make a clear&ls command
-
-I am not sure that you have done anything wrong. So I am going to carry on. 
-
-You are at: 
-
-Adjusting the Rest of the World to Our New Models
+ 
+you are at: 
+	>> Testing the Response Context Objects Directly

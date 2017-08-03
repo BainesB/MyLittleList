@@ -57,7 +57,7 @@ python manage.py test lists : to run the unit 'developer side' tests
 
 assertRegex : Django helper that checks if a string matches a regular expresion 'regex'
 
-
+url(r'^lists/(.+)/$', views.view_list, name='view_list'),  : (.+) will match any characters up to the following /. The captured text will get passed to the view as an argument. 
 
 
 
