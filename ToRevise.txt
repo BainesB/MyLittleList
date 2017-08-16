@@ -60,6 +60,6 @@ assertRegex : Django helper that checks if a string matches a regular expresion 
 url(r'^lists/(.+)/$', views.view_list, name='view_list'),  : (.+) will match any characters up to the following /. The captured text will get passed to the view as an argument. 
 
 
-
+git diff -b    :  -b means ignor white space. useful for when you have changed the indentation. 
 
 

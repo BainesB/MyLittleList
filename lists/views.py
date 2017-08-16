@@ -19,7 +19,12 @@ def new_list(request):
     return redirect(f'/lists/{list_.id}/')
 
 def add_item(request, list_id):
+# this takes a 'request' and an list_id
     list_ = List.objects.get(id=list_id)
+# setting list_ to objects.get() something with the list_id. 
+# get this list.
     Item.objects.create(text=request.POST['item_text'], list=list_)
+#   create ant object with the POST request text. 
+#	finally redirrect to that text. 
     return redirect(f'/lists/{list_.id}/')
 
