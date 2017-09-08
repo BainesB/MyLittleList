@@ -6,4 +6,19 @@ you are at:
 		i have made the margin of error much bigger to get the test to pass. this may come back to hawnt you.  
 
 
->>  you are at Table styling
+>>  you are at Anyway, lets try running collectstastic.
+	python manage.py collectstatic
+
+for some reason it cant find the path to Django. 
+
+so i need to work out where that is and add it to my python path. 
+
+python path:
+
+'/home/alex/.virtualenvs/superlists/lib/python36.zip', '/home/alex/.virtualenvs/superlists/lib/python3.6', '/home/alex/.virtualenvs/superlists/lib/python3.6/lib-dynload', '/usr/lib/python3.6', '/home/alex/.virtualenvs/superlists/lib/python3.6/site-packages']
+
+
+path to django: 
+
+<module 'django' from '/home/alex/.virtualenvs/superlists/lib/python3.6/site-packages/django/__init__.py'>
+
