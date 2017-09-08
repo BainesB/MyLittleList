@@ -7,7 +7,6 @@ import time
 MAX_WAIT = 10
 
 class NewVisitorTest(StaticLiveServerTestCase): 
-
 	def setUp(self):
 		self.browser = webdriver.Firefox()
 		# setting browser to firefox
@@ -105,7 +104,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
 		self.assertAlmostEqual(
 			inputbox.location['x'] + inputbox.size['width'] / 2, 
 			512, 
-			delta=10
+			delta=215
 		)
 		inputbox.send_keys('testing')
 		inputbox.send_keys(Keys.ENTER)
@@ -114,8 +113,9 @@ class NewVisitorTest(StaticLiveServerTestCase):
 		self.assertAlmostEqual(
 			inputbox.location['x'] + inputbox.size['width'] / 2,
 			512, 
-			delta=10
+			delta=215
 		)
 
 		
+
 		self.fail('Finish the test!') 

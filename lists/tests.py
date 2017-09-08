@@ -1,26 +1,21 @@
+# THIS IS MY VERSION
+
 from django.core.urlresolvers import resolve 
-from django.test import TestCase
 from django.http import HttpRequest
 
 from lists.views import home_page #2
 from django.template.loader import render_to_string
 from django.db import models
+
+from django.test import TestCase
 from lists.models import Item, List
-'''
-class SmokeTest(TestCase):
-    
-    def test_bad_maths(self):
-            self.assertEqual(1 + 1, 3)
-'''
 
 class HomePageTest(TestCase):
-# 	class is testing the home page. 
+
     def test_uses_home_template(self):
-# 	check we are using the home page template. 
         response = self.client.get('/')
-#	this is that.
         self.assertTemplateUsed(response, 'home.html')
-#	checking we are using a template cald home.html
+
     def test_only_saves_item_when_necessary(self):
 
             self.client.get('/')
@@ -107,23 +102,15 @@ class NewListTest(TestCase):
 
         other_list = List.objects.create()
         correct_list = List.objects.create()
-#	other_list vs correct_list 
         self.client.post(
             f'/lists/{correct_list.id}/add_item',
-# 	what is add_item??  they are sending. 'post'ing data to the page. 
 
-## 	need to work out where add_item goes. 
              data={'item_text': 'A new item for an existing list'}
         )
-#	so this is setting item_text to 'A new item for an existing list'
         self.assertEqual(Item.objects.count(), 1)
-#	checking there is one thing in Item. 
         new_item = Item.objects.first() 
-#	setting new_item to objects.first()
         self.assertEqual(new_item.text, 'A new item for an existing list') 
-#	did it show up.
         self.assertEqual(new_item.list, correct_list)
-# 	is-it/same-as correct list.
 
     def test_redirects_to_list_view(self):
 
@@ -136,18 +123,14 @@ class NewListTest(TestCase):
             )
 
         self.assertRedirects(response, f'/lists/{correct_list.id}/')    
-# 	checks that it reddirects ot correct_list.id
 
     def test_redirects_after_POST(self):
         response = self.client.post('/lists/new', data={'item_text':'A new list item'})
         new_list = List.objects.first()
         self.assertRedirects(response,f'/lists/{new_list.id}/')
-#	?? not sure I understand what this Redirects bit does. 
 
     def test_passes_correct_list_to_template(self):
         other_list = List.objects.create()
         correct_list = List.objects.create()
         response = self.client.get(f'/lists/{correct_list.id}/')
         self.assertEqual(response.context['list'], correct_list)
-# 	check that correct_list.id.contex['list'] is the same as correct_list
-#	??

@@ -62,4 +62,4 @@ url(r'^lists/(.+)/$', views.view_list, name='view_list'),  : (.+) will match any
 
 git diff -b    :  -b means ignor white space. useful for when you have changed the indentation. 
 
-
+'tr' or <tr>  : an html tag. it defines a row in a table. 
