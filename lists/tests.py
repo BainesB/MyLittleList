@@ -88,7 +88,7 @@ class ListViewTest(TestCase):
         Item.objects.create(text='other list item 1', list=other_list)
         Item.objects.create(text='other list item 2', list=other_list)
 
-        response = self.client.get(f'/lists/{correct_list.id}/')r
+        response = self.client.get(f'/lists/{correct_list.id}/')
 ## what does this r at the end of the line do?         
         self.assertContains(response, 'itemey 1')
         self.assertContains(response, 'itemey 2')
