@@ -13,4 +13,13 @@ you can also ssh into alex@178.62.1.64
 
 next you need to work out how to get he muddymarvalous domains to point at 178.62.1.64 
 
-at which point we should be able to put our code on the remote server and have the sight on the web. Which will be great!	
+at which point we should be able to put our code on the remote server and have the sight on the web. Which will be great!
+
+>> The tests are running again. I have made a git repository in the parrent dirrectory. This seems to be stopping the repo in the main from being pushed to github. 
+
+I think you want to git branch -d master in this folder. 
+
+then go bellow. and git add ../ 
+
+
+see if that works 	
