@@ -7,4 +7,6 @@ you can also ssh into alex@178.62.1.64
 	the remote servere is up and running which is really cool. 
 	
 	Start reading chap10
-		
+
+>> you are at:
+	You should find the systemctl command responds to tab completion, including of the service name, by the way.) ''' it doesn't. 
