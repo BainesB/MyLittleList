@@ -20,4 +20,6 @@ you can also ssh into alex@178.62.1.64
 
 	on the server you are gettign a megalist/megalist thing happening. So i think the local .git is in the wrong place. 
 
-	it looks like your .git is a level above where is should be. 
+	it looks like your .git is a level above where is should be.
+
+>> 	there seem like there is quite a lot going on here. Some of your code is pretty different from his. I am not sure why.  
