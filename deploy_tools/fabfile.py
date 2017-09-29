@@ -42,24 +42,23 @@ def _get_latest_source(source_folder):
 			# cd into the source/ and git reset hard. 
 
 def _update_settings(source_folder, site_name):
-	settings_path = source_folder + '/megalists/settings.py'
-	# this is getting the dirrectory path to settings.py
-	sed(settings_path, "DEBUG = True", "DEBUG = False")
-	# need to look at what sed is. this seems strieght switch
-	sed(settings_path, 
-		'ALLOWED_HOSTS =.+$',
-		f'ALLOWED_HOSTS = ["{site_name}"]'
-	)
-	# looks like a swop out for the site name ie muddymarvellous. 	
-	secret_key_file = source_folder + '/megalists/secret_key.py'
-	# what is this secret_key.py bit. Ok the next bit it checks exists
-	if not exists(secret_key_file):
-		chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
-		key = ''.join(random.SystemRandom().choice(chars) for _ in range(50))
-		#seems to be creating a massive password. 
-		append(secret_key_file, f'SECRET_KEY = "{key}"')
-		#....
-	append(setting_path, '\nfrom .secret_key import SECRET_KEY')
+		settings_path = source_folder + '/megalists/settings.py'
+		# this is getting the dirrectory path to settings.py
+		sed(settings_path, "DEBUG = True", "DEBUG = False")
+		# need to look at what sed is. this seems strieght switch
+		sed(settings_path, 
+			'ALLOWED_HOSTS =.+$',
+			f'ALLOWED_HOSTS = ["{site_name}"]'
+		)
+		# looks like a swop out for the site name ie muddymarvellous. 	
+		secret_key_file = source_folder + '/megalists/secret_key.py'
+		# what is this secret_key.py bit. Ok the next bit it checks exists
+		if not exists(secret_key_file):
+			chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+			key = ''.join(random.SystemRandom().choice(chars) for _ in range(50))
+			#seems to be creating a massive password. 
+			append(secret_key_file, f'SECRET_KEY = "{key}"')
+		append(settings_path, '\nfrom .secret_key import SECRET_KEY')
 
 def _update_virtualenv(source_folder):
 	virtualenv_folder = source_folder + '/../virtualenv'
@@ -78,7 +77,7 @@ def _update_static_files(source_folder):
 def _update_database(source_folder):
 	run(
 		f'cd {source_folder}'
-		'&& ../virtualenv/bin/python manage.py migrate --noinput'
+		' && ../virtualenv/bin/python manage.py migrate --noinput'
 	)
 
 # this is migrating the db

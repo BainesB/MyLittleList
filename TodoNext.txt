@@ -1,0 +1,23 @@
+
+you can also ssh into alex@178.62.1.64
+
+>> you are at: 
+
+	Chapture 10. 
+	the remote servere is up and running which is really cool. 
+	
+	Start reading chap10
+>> you are at: 
+	you have made a fabric.py file. 
+	go through it backwards and make sure that you haven't made any mistakes. 	
+	when you run that script with fabric is gets a long way in and then breaks.
+
+	I think you need to work out how to add the .com domain.
+	I also see if you have the .com dirrectories on serever yet
+
+
+	keep check your code against his for typos. As you did found one. 
+
+	on the server you are gettign a megalist/megalist thing happening. So i think the local .git is in the wrong place. 
+
+	it looks like your .git is a level above where is should be. 

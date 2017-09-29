@@ -1,9 +1,9 @@
 [Unit] 
-Dercription=Gunicorn server for SITENAME 
+Description=Gunicorn server for SITENAME 
 
 [Service]
 Restart=on-failure
-User=alex 
+User=alex
 WorkingDirectory=/home/alex/sites/SITENAME/source
 ExecStart=/home/alex/sites/SITENAME/virtualenv/bin/gunicorn \
 	--bind unix:/tmp/SITENAME.socket \ 
