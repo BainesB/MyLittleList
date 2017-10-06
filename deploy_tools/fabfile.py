@@ -2,8 +2,7 @@ from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run 
 import random
 
-REPO_URL = 'http://github.com/BainesB/MyLittleList.git'
-
+REPO_URL = 'https://github.com/BainesB/MyLittleList.git'
 
 def deploy():
 	site_folder = f'/home/{env.user}/sites/{env.host}'
@@ -24,7 +23,8 @@ def _get_latest_source(source_folder):
 			run(f'cd {source_folder} && git fetch')
 		else:
 			run(f'git clone {REPO_URL} {source_folder}') 
-			current_commit = local("git log -n 1 --format=%H", capture=True)
+		current_commit = local("git log -n 1 --format=%H", capture=True)
+
 			run(f'cd {source_folder} && git reset --hard {current_commit}')
 
 def _update_settings(source_folder, site_name):
