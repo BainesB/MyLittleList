@@ -12,10 +12,10 @@ Provisioning an new site
 
 eg, on Ubuntu: 
 
-sudo add-apt-repository ppa:fkrull/deadsnakes
-sudo apt-get install nginx git python36 python3.6-venv
+	sudo add-apt-repository ppa:fkrull/deadsnakes
+	sudo apt-get install nginx git python36 python3.6-venv
 
-## Nginx virtual Host config 
+## Nginx Virtual Host config 
 
 * see nignx.template.conf 
 * replace SITENAME with, e.g., staging.my-domain.com 
